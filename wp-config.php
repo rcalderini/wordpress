@@ -26,6 +26,16 @@ define('DB_USER', getenv("MYSQL_WP_USER"));
 /**Atenção
  esse valor KGssG6L+PACNCE+aV4uU2TA= que é passado como segundo parametro
  * é a chave de criptografia que é usada para cifrar e decifrar
+ * melhor opção é colocala como varivel de ambiente e chamar getenv(MYSQL_WP_HASH)
+ *
+ * A variavel MYSQL_WP_PWD está armazenada na sessão de forma cifrada.
+ *
+ * Para gerar a cifra da senha consultar instruções no link
+ *
+ * https://github.com/rcalderini/wordpress/tree/master
+ * final da pagina.
+ *
+ * PS: Remover esses comentários depois.
  */
 define('DB_PASSWORD', wp_decrypt(getenv("MYSQL_WP_PWD"), "KGssG6L+PACNCE+aV4uU2TA="));
 
